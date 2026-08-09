@@ -1,4 +1,4 @@
-# MH · MicroHistorias — V5
+reviewed# MH · MicroHistorias — V5
 
 Correcciones sobre V4:
 - Eliminado FAQ por completo.
