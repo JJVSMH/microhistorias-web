@@ -255,7 +255,7 @@ footer p{margin:4px 0}.footer-flourish{color:var(--gold);font-size:22px;margin-b
 
 /* MH V6: el dominio sustituye al monograma gigante del hero */
 .domain-title{
-  font-size:clamp(42px,6.2vw,78px);
+  font-size:clamp(60px,8vw,112px);
   font-weight:400;
   letter-spacing:-.045em;
   line-height:1.05;
@@ -263,5 +263,5 @@ footer p{margin:4px 0}.footer-flourish{color:var(--gold);font-size:22px;margin-b
   overflow-wrap:anywhere;
 }
 @media(max-width:620px){
-  .domain-title{font-size:clamp(32px,9vw,48px);letter-spacing:-.04em;margin:4px auto 16px;}
+  .domain-title{font-size:clamp(40px,10vw,58px);letter-spacing:-.04em;margin:4px auto 16px;}
 }
