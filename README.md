@@ -1,13 +1,10 @@
-reviewed# MH · MicroHistorias — V5
+# MH · MicroHistorias — V6
 
-Correcciones sobre V4:
-- Eliminado FAQ por completo.
-- Nuevo logotipo MH manuscrito real en SVG, sin depender de tipografías instaladas.
-- MH grande en portada.
-- Mano + papel centrados correctamente.
-- Espaciados verticales ajustados para evitar que la zona inferior quede apelotonada.
-- Footer legal mantenido pero más aireado.
-- Aviso legal unificado conservado.
+Cambio solicitado:
+- Se conserva el pequeño logo manuscrito MH en la cabecera superior izquierda.
+- Se elimina el MH gigante del inicio y se sustituye por `microhistorias.net` en tipografía editorial, con tamaño responsive.
+- Se conserva el resto del contenido, ilustración, reto y aviso legal de la V5.
+- No hay FAQ.
 
-Despliegue:
-Sustituye el contenido actual del repositorio por el contenido de esta carpeta, commit y push.
+## Publicación
+Sube el contenido de esta carpeta a la raíz del repositorio GitHub conectado a Cloudflare Pages y confirma el commit. El despliegue se publicará automáticamente si la integración está conectada.

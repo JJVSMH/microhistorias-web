@@ -1,10 +1,267 @@
-:root{--paper:#fbfaf6;--ink:#171715;--gold:#ad7e2b;--line:#ddd2bf}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif}
-.site-header{position:sticky;top:0;z-index:20;min-height:68px;display:flex;align-items:center;justify-content:space-between;padding:0 max(24px,calc((100vw - 1120px)/2));background:rgba(251,250,246,.96);border-bottom:1px solid #eadfce}
-.site-header a{text-decoration:none;color:inherit}.brand{display:flex;align-items:center;min-height:68px}.brand img{display:block;width:78px;height:auto}.site-header nav{display:flex;gap:30px;font:12px Arial,sans-serif}.hero{width:min(1040px,calc(100% - 40px));margin:auto;text-align:center;padding:48px 0 28px}
-.brand-large{line-height:0}.brand-large img{display:block;width:min(430px,62vw);height:auto;margin:0 auto}.ornament{display:flex;align-items:center;justify-content:center;gap:12px;margin:22px 0 34px;color:var(--gold)}.ornament span{width:105px;height:1px;background:currentColor}.ornament i{width:8px;height:8px;border:1px solid currentColor;transform:rotate(45deg)}
-h1{font-size:clamp(42px,5.5vw,64px);line-height:1.05;font-weight:400;letter-spacing:-.035em;margin:0 0 28px}.writing-wrap{width:min(620px,100%);margin:auto;overflow:hidden}.writing-wrap img{width:100%;display:block}
-.about{width:min(820px,calc(100% - 40px));margin:8px auto 62px}.about details{border-top:1px solid #d7c094;border-bottom:1px solid #d7c094}.about summary{list-style:none;cursor:pointer;min-height:74px;display:flex;align-items:center;justify-content:center;gap:18px;font-size:clamp(24px,3vw,34px)}.about summary::-webkit-details-marker{display:none}.about summary small{color:var(--gold);font:700 11px Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase}.paper-note{margin:0 0 26px;padding:46px 58px;background:#f6f1e8;border:1px solid #eadfce;box-shadow:0 16px 40px rgba(58,43,19,.05);font-family:"Bradley Hand","Segoe Print","Apple Chancery",cursive}.paper-note h2{font-size:42px;margin:0 0 18px;font-weight:400}.paper-note p{font-size:24px;line-height:1.5;margin:0 0 14px}
-.challenge{width:min(940px,calc(100% - 40px));margin:auto;text-align:center;padding:0 0 70px}.section-label{display:flex;justify-content:center;align-items:center;gap:14px;color:var(--gold);font:700 12px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}.section-label span{width:100px;height:1px;background:currentColor}.challenge h2,.participate h2{font-size:clamp(36px,4.7vw,54px);line-height:1.07;font-weight:400;letter-spacing:-.03em;margin:18px 0 0}.lead{font-size:clamp(19px,2.4vw,25px);color:#79571e;max-width:760px;margin:15px auto 30px}.principles{width:min(720px,100%);margin:auto;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.principles>div{display:flex;align-items:center;justify-content:center;gap:14px;padding:20px}.principles>div+div{border-left:1px solid var(--line)}.principles strong{color:var(--gold);font:30px Arial}.principles p{font-size:20px}
-.participate{width:min(820px,calc(100% - 40px));margin:0 auto 74px;padding:50px 36px;text-align:center;border-top:1px solid #d7c094;border-bottom:1px solid #d7c094}.eyebrow{color:var(--gold);font:700 12px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}.participate>p:not(.eyebrow){font-size:18px;color:#625b51}.cta{display:inline-flex;align-items:center;justify-content:center;width:min(620px,100%);min-height:66px;padding:17px 24px;background:#191917;color:#fff;text-decoration:none;outline:1px solid var(--gold);outline-offset:-5px;font:700 14px Arial,sans-serif;letter-spacing:.12em;text-transform:uppercase}footer{text-align:center;border-top:1px solid #eadfce;padding:30px;font:12px Arial,sans-serif;letter-spacing:.24em}
-@media(max-width:620px){.site-header{padding:0 16px}.site-header nav{display:none}.brand img{width:68px}.hero{padding-top:30px;width:calc(100% - 28px)}.brand-large img{width:min(300px,74vw)}.ornament{margin:18px 0 26px}.ornament span{width:60px}h1{font-size:clamp(34px,10.5vw,44px);margin-bottom:18px}.writing-wrap{width:92%}.about,.challenge,.participate{width:calc(100% - 28px)}.about{margin-bottom:48px}.about summary{min-height:64px;flex-direction:column;gap:4px;font-size:25px}.paper-note{padding:32px 22px}.paper-note h2{font-size:34px}.paper-note p{font-size:20px}.challenge{padding-bottom:54px}.section-label span{width:44px}.challenge h2,.participate h2{font-size:clamp(33px,10vw,43px)}.lead{font-size:18px;max-width:320px}.principles{grid-template-columns:1fr}.principles>div+div{border-left:0;border-top:1px solid var(--line)}.participate{padding:40px 18px}.cta{font-size:12px;letter-spacing:.09em}}
+:root{
+  --paper:#fbfaf6;
+  --ink:#171715;
+  --gold:#b1843d;
+  --line:#dfd2bd;
+  --soft:#f6f1e8;
+  --muted:#625b51;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.site-header{position:sticky;top:0;z-index:50;min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:0 max(24px,calc((100vw - 1180px)/2));background:rgba(251,250,246,.96);border-bottom:1px solid #eadfce;backdrop-filter:blur(10px)}
+.brand-mark{display:block;width:76px;height:48px;flex:0 0 auto;text-decoration:none}
+.brand-mark svg{display:block;width:100%;height:100%;overflow:visible}
+.brand-mark text{font:italic 64px "Brush Script MT","Segoe Script","Snell Roundhand",cursive;fill:var(--ink)}
+.brand-mark path{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round}
+.site-header nav{display:flex;align-items:center;gap:clamp(24px,3vw,46px);font:13px Arial,sans-serif;white-space:nowrap}
+.site-header nav a{text-decoration:none}.site-header nav a:hover{opacity:.58}
+.menu-toggle{display:none;border:0;background:transparent;color:var(--ink);font:13px Arial,sans-serif;padding:10px 0}
+.hero{width:min(1040px,calc(100% - 40px));margin:auto;text-align:center;padding:44px 0 2px}
+.brand-large{font-size:clamp(56px,7vw,92px);letter-spacing:-.055em;line-height:.94;margin:0}
+.ornament{display:flex;align-items:center;justify-content:center;gap:12px;margin:25px 0 29px;color:var(--gold)}
+.ornament span{width:108px;height:1px;background:currentColor}.ornament i{width:8px;height:8px;border:1px solid currentColor;transform:rotate(45deg)}
+h1{font-size:clamp(38px,4.45vw,56px);line-height:1.07;font-weight:400;letter-spacing:-.035em;margin:0 0 20px}
+.writing-wrap{width:min(570px,92%);margin:0 auto;overflow:hidden}.writing-wrap img{width:100%;height:auto;display:block}
+.about{width:min(820px,calc(100% - 40px));margin:-4px auto 42px}
+.about details{border-top:1px solid #d7c094;border-bottom:1px solid #d7c094}
+.about summary{list-style:none;cursor:pointer;min-height:64px;display:flex;align-items:center;justify-content:center;gap:18px;font-size:clamp(22px,2.3vw,30px)}
+.about summary::-webkit-details-marker{display:none}.about summary::marker{content:""}
+.about summary small{color:var(--gold);font:700 10px Arial,sans-serif;letter-spacing:.16em;text-transform:uppercase}
+.paper-note{margin:0 0 22px;padding:38px 48px;background:var(--soft);border:1px solid #eadfce;box-shadow:0 14px 36px rgba(58,43,19,.045);font-family:"Bradley Hand","Segoe Print","Apple Chancery",cursive}
+.paper-note h2{font-size:38px;margin:0 0 14px;font-weight:400}.paper-note p{font-size:22px;line-height:1.45;margin:0 0 12px}
+.challenge{width:min(940px,calc(100% - 40px));margin:auto;text-align:center;padding:0 0 38px}
+.section-label{display:flex;justify-content:center;align-items:center;gap:14px;color:var(--gold);font:700 12px Arial,sans-serif;letter-spacing:.2em;text-transform:uppercase}
+.section-label span{width:98px;height:1px;background:currentColor}
+.challenge h2,.participate h2{font-size:clamp(34px,4vw,49px);line-height:1.07;font-weight:400;letter-spacing:-.03em;margin:16px 0 0}
+.lead{font-size:clamp(18px,2vw,23px);color:#8a6428;max-width:760px;margin:13px auto 20px}
+.principles{width:min(720px,100%);margin:auto;display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.principles>div{display:flex;align-items:center;justify-content:center;gap:14px;padding:17px 20px}.principles>div+div{border-left:1px solid var(--line)}
+.principles strong{color:var(--gold);font:30px Arial}.principles p{font-size:18px;margin:0}
+.participate{width:min(820px,calc(100% - 40px));margin:0 auto 50px;padding:34px 36px 42px;text-align:center;border-top:1px solid #d7c094;border-bottom:1px solid #d7c094}
+.eyebrow{color:var(--gold);font:700 11px Arial,sans-serif;letter-spacing:.22em;text-transform:uppercase;margin:0 0 10px}
+.participate>p:not(.eyebrow){font-size:17px;color:var(--muted);margin:14px 0 20px}
+.cta{display:inline-flex;align-items:center;justify-content:center;width:min(620px,100%);min-height:68px;padding:17px 24px;background:#191917;color:#fff;text-decoration:none;outline:1px solid var(--gold);outline-offset:-5px;font:700 13px/1.35 Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;transition:transform .18s ease,opacity .18s ease}
+.cta:hover{transform:translateY(-1px);opacity:.92}
+.faq{width:min(820px,calc(100% - 40px));margin:0 auto 62px;text-align:center}
+.faq>h2{font-size:42px;font-weight:400;margin:0 0 22px}.faq>.eyebrow{margin-bottom:5px}
+.faq details{text-align:left;border-top:1px solid var(--line);padding:0}.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;font-size:20px;padding:19px 42px 19px 0;position:relative}.faq summary::-webkit-details-marker{display:none}.faq summary::marker{content:""}
+.faq summary::after{content:"+";position:absolute;right:4px;top:16px;color:var(--gold);font:26px Arial,sans-serif}.faq details[open] summary::after{content:"−"}
+.faq p{font-size:17px;line-height:1.55;color:var(--muted);margin:0;padding:0 44px 20px 0}
+footer{text-align:center;border-top:1px solid #eadfce;padding:24px 20px 30px;font:12px Arial,sans-serif;color:var(--muted)}
+footer p{margin:4px 0}.footer-flourish{color:var(--gold);font-size:22px;margin-bottom:6px}.domain{letter-spacing:.22em;color:var(--ink);margin-top:12px}
+@media(max-width:760px){
+  html{scroll-padding-top:68px}
+  .site-header{min-height:64px;padding:0 16px;align-items:center}
+  .brand-mark{width:64px;height:42px}
+  .menu-toggle{display:block}
+  .site-header nav{position:absolute;left:0;right:0;top:64px;display:none;flex-direction:column;align-items:flex-start;gap:0;padding:8px 18px 16px;background:rgba(251,250,246,.99);border-bottom:1px solid #eadfce;white-space:normal}
+  .site-header nav.is-open{display:flex}.site-header nav a{width:100%;padding:12px 0;border-bottom:1px solid #eee4d5}
+  .hero{padding-top:28px;width:calc(100% - 28px)}
+  .brand-large{font-size:clamp(48px,15vw,66px)}
+  .ornament{margin:18px 0 22px}.ornament span{width:58px}
+  h1{font-size:clamp(31px,9.5vw,41px);margin-bottom:12px}
+  .writing-wrap{width:min(430px,100%)}
+  .about,.challenge,.participate,.faq{width:calc(100% - 28px)}
+  .about{margin-top:0;margin-bottom:36px}.about summary{min-height:58px;flex-direction:column;gap:3px;font-size:23px}.paper-note{padding:28px 20px}.paper-note h2{font-size:32px}.paper-note p{font-size:19px}
+  .challenge{padding-bottom:34px}.section-label span{width:44px}.challenge h2,.participate h2{font-size:clamp(31px,9.2vw,40px)}.lead{font-size:17px;max-width:320px}
+  .principles{grid-template-columns:1fr}.principles>div{padding:14px}.principles>div+div{border-left:0;border-top:1px solid var(--line)}.principles p{font-size:17px}
+  .participate{padding:28px 14px 34px;margin-bottom:42px}.participate>p:not(.eyebrow){font-size:16px}.cta{min-height:62px;font-size:11px;letter-spacing:.09em;padding:15px 16px}
+  .faq{margin-bottom:46px}.faq>h2{font-size:36px}.faq summary{font-size:18px;padding:17px 36px 17px 0}.faq p{font-size:16px;padding-right:28px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cta{transition:none}}
+
+
+/* ===== MH V3 ===== */
+.mh-mark,.mh-hero,.footer-mark{
+  font-family:"Bradley Hand","Segoe Print","Apple Chancery","Snell Roundhand",cursive;
+  font-style:italic;
+  font-weight:400;
+}
+.brand{display:flex;align-items:center;gap:12px}
+.mh-mark{font-size:38px;line-height:1;transform:rotate(-5deg);letter-spacing:-.08em}
+.brand-word{font-size:18px}
+.mh-hero{font-size:clamp(72px,10vw,120px);line-height:.8;margin-bottom:18px;transform:rotate(-4deg);letter-spacing:-.09em}
+.hero-line{font-size:clamp(22px,2.6vw,30px);font-style:italic;margin:16px 0 8px}
+.privacy-short{max-width:680px;margin:18px auto 0 !important;font:13px/1.55 Arial,sans-serif !important;color:#6d665d !important}
+.privacy-short a{color:inherit}
+.faq{width:min(820px,calc(100% - 40px));margin:0 auto 72px;padding-top:8px}
+.faq>.eyebrow{text-align:center}
+.faq details{border-top:1px solid var(--line);padding:0}
+.faq details:last-child{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;list-style:none;padding:22px 4px;font-size:21px;display:flex;justify-content:space-between;gap:20px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font:24px Arial,sans-serif;color:var(--gold)}
+.faq details[open] summary::after{content:"−"}
+.faq details p{font-size:17px;line-height:1.55;color:#625b51;margin:0 4px 22px;max-width:720px}
+.site-footer{text-align:center;border-top:1px solid #eadfce;padding:34px 20px 38px;font:12px/1.6 Arial,sans-serif;letter-spacing:.02em}
+.footer-mark{font-size:52px;line-height:1;margin-bottom:8px;transform:rotate(-4deg)}
+.site-footer nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap;margin:10px 0 16px}
+.site-footer a{color:inherit}
+.legal-note{max-width:850px;margin:0 auto;color:#736c62;font-size:11px}
+.since{margin-top:16px;letter-spacing:.12em;text-transform:uppercase;font-size:10px;color:#8b8379}
+.legal-page{width:min(820px,calc(100% - 40px));margin:0 auto;padding:72px 0 90px}
+.legal-page .mh-hero{font-size:72px;text-align:center}
+.legal-page h1{font-size:clamp(38px,5vw,56px);text-align:center;margin-bottom:34px}
+.legal-page h2{font-size:28px;font-weight:400;margin:34px 0 12px}
+.legal-page p,.legal-page li{font-size:17px;line-height:1.65}
+.legal-page .legal-disclaimer{margin-top:42px;padding-top:20px;border-top:1px solid var(--line);font:13px/1.6 Arial,sans-serif;color:#6f685f}
+.legal-page .back{display:inline-block;margin-top:36px;font:13px Arial,sans-serif;color:inherit}
+@media(max-width:620px){
+  .mh-mark{font-size:34px}
+  .brand-word{display:none}
+  .mh-hero{font-size:72px;margin-bottom:12px}
+  .hero-line{font-size:21px}
+  .site-footer nav{gap:12px}
+}
+
+/* ===== MH V4 ===== */
+.legal-main-link{font-weight:700;text-underline-offset:3px}
+.legal-intro{text-align:center;color:#6f685f;max-width:650px;margin:-12px auto 30px}
+.legal-index{display:flex;justify-content:center;gap:10px 18px;flex-wrap:wrap;margin:0 auto 46px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font:12px Arial,sans-serif;text-transform:uppercase;letter-spacing:.09em}
+.legal-index a{color:inherit;text-decoration:none}
+.legal-page section{scroll-margin-top:90px}
+.legal-page section+section{margin-top:42px}
+@media(max-width:620px){
+  .legal-index{justify-content:flex-start}
+}
+
+/* ===== MH V5 CORRECCIONES ===== */
+.mh-logo-small{
+  width:76px;
+  height:auto;
+  display:block;
+}
+.mh-logo-hero{
+  width:min(300px,55vw);
+  height:auto;
+  display:block;
+  margin:0 auto 12px;
+}
+.mh-logo-footer{
+  width:110px;
+  height:auto;
+  display:block;
+  margin:0 auto 8px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+.brand-word{
+  font-size:18px;
+}
+.hero{
+  width:min(1040px,calc(100% - 40px));
+  margin:0 auto;
+  text-align:center;
+  padding:46px 0 20px;
+}
+.brand-large{
+  margin-top:0;
+}
+.writing-wrap{
+  width:min(650px,92%);
+  margin:28px auto 0;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:visible;
+}
+.writing-wrap img{
+  width:100%;
+  max-width:650px;
+  height:auto;
+  display:block;
+  margin:0 auto;
+  object-fit:contain;
+  object-position:center;
+}
+.hero-line{
+  margin:16px auto 6px;
+}
+.about{
+  margin-top:14px;
+  margin-bottom:44px;
+}
+.challenge{
+  padding-bottom:42px;
+}
+.participate{
+  margin-bottom:46px;
+  padding-top:42px;
+  padding-bottom:42px;
+}
+.site-footer{
+  padding-top:28px;
+  padding-bottom:28px;
+}
+.site-footer p{
+  margin:7px auto;
+}
+.legal-note{
+  max-width:760px;
+  margin-top:14px !important;
+  line-height:1.55;
+}
+.since{
+  margin-top:12px !important;
+}
+.faq{display:none!important}
+
+@media(max-width:620px){
+  .site-header{
+    min-height:60px;
+  }
+  .mh-logo-small{
+    width:60px;
+  }
+  .brand-word{
+    display:none;
+  }
+  .hero{
+    padding-top:24px;
+    width:calc(100% - 24px);
+  }
+  .mh-logo-hero{
+    width:min(240px,62vw);
+    margin-bottom:8px;
+  }
+  .writing-wrap{
+    width:96%;
+    margin-top:18px;
+  }
+  .about{
+    margin-top:6px;
+    margin-bottom:36px;
+  }
+  .challenge{
+    padding-bottom:34px;
+  }
+  .participate{
+    margin-bottom:34px;
+    padding:34px 16px;
+  }
+  .mh-logo-footer{
+    width:90px;
+  }
+  .legal-note{
+    max-width:95%;
+  }
+}
+
+/* MH V6: el dominio sustituye al monograma gigante del hero */
+.domain-title{
+  font-size:clamp(42px,6.2vw,78px);
+  font-weight:400;
+  letter-spacing:-.045em;
+  line-height:1.05;
+  margin:4px auto 20px;
+  overflow-wrap:anywhere;
+}
+@media(max-width:620px){
+  .domain-title{font-size:clamp(32px,9vw,48px);letter-spacing:-.04em;margin:4px auto 16px;}
+}
